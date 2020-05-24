@@ -1,0 +1,8 @@
+# add remote upstream
+# use when you fork a project to catch up with its latest updates
+git remote add upstream https://github.com/ANGSD/angsd.git
+
+# fetch newest from upstream
+git fetch upstream
+git checkout master
+git merge upstream/master
