@@ -1,7 +1,6 @@
 # git cheatsheet
 
-### add remote upstream
-#### use when you fork a project to catch up with its latest updates
+### add remote upstream (use when you fork a project to catch up with its latest updates)
 ```
 git remote add upstream https://github.com/USERNAME/REPONAME.git
 ```
