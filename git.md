@@ -5,8 +5,7 @@
 git remote add upstream https://github.com/USERNAME/REPONAME.git
 ```
 
-### reverse `git remote add upstream`
-
+### reverse `git remote add upstream` command
 `git remote rm upstream`
 
 check if it's gone: `git remote -v`
