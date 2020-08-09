@@ -1,23 +1,29 @@
 # git cheatsheet
 
-### → add remote upstream (use when you fork a project to catch up with its latest updates)
+### add remote upstream (use when you fork a project to catch up with its latest updates)
 ```
 git remote add upstream https://github.com/USERNAME/REPONAME.git
 ```
 
-### → fetch newest from upstream
+### reverse `git remote add upstream`
+
+`git remote rm upstream`
+
+check if it's gone: `git remote -v`
+
+### fetch newest from upstream
 ```
 git fetch upstream
 git checkout master
 git merge upstream/master
 ```
 
-### → reverse `git add FILE` command
+### reverse `git add FILE` command
 ```
 git reset FILE
 ```
 
-### → reverse `git add .`command
+### reverse `git add .`command
 ```
 git reset
 ```
