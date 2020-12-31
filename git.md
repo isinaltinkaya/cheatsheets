@@ -27,3 +27,6 @@ git reset FILE
 git reset
 ```
 
+### Nice tutorials
+[gittutorial](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/gittutorial.html)
+[Git for Computer Scientists](https://eagain.net/articles/git-for-computer-scientists/)
