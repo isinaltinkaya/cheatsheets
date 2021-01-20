@@ -36,3 +36,19 @@ $@ ->not safe
 
 [Use ShellCheck!!](https://www.shellcheck.net/)
 
+
+
+
+## WRONG way to loop in a file
+```
+for line in $(cat myFile.txt); do echo "$line"; done
+```
+## CORRECT way
+```
+while read -r line; do echo "$line"; done < myFile.txt
+```
+## Another CORRECT way using mapfile builtin command
+```
+mapfile -t myArray < myFile.txt
+for line in "${myArray[@]}"; do echo "$line"; done
+```
