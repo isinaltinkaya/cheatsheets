@@ -52,3 +52,18 @@ while read -r line; do echo "$line"; done < myFile.txt
 mapfile -t myArray < myFile.txt
 for line in "${myArray[@]}"; do echo "$line"; done
 ```
+
+
+## BAD practice: Returns globbing pattern when no file found
+```
+$for file in tmp/* tmp3/*; do echo $file; done
+tmp/file1
+tmp/file2
+tmp/tmp2
+tmp3/*
+```
+
+## BEST practice
+```
+for file in tmp/* tmp3/*; do { [[ -e $file ]] || continue; echo $file; } done
+```
