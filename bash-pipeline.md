@@ -67,3 +67,7 @@ tmp3/*
 ```
 for file in tmp/* tmp3/*; do { [[ -e $file ]] || continue; echo $file; } done
 ```
+
+to prevent tools to spend lots of time treating your ascii (plain text) file as unicode: start script with `export LANG=C` 
+
+use `export LC_ALL=C` to produce consistent ordering
