@@ -27,6 +27,11 @@ git reset FILE
 git reset
 ```
 
+- discard all uncommitted changes
+```
+git reset --hard
+```
+
 - add a specific git commit to the current working HEAD
 ```
 git cherry-pick commitsSha
