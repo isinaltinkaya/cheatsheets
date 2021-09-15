@@ -7,6 +7,10 @@ ___
 
 ___
 
+### -> pass file list to copy
+`cat filelist | xargs -I{} cp -u {} destination/`
+
+___
 
 | expression | `FOO='V'`    | `FOO=''`     | `unset FOO`  |
 |------------|------------|------------|------------|
