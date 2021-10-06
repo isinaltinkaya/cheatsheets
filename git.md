@@ -38,6 +38,14 @@ git cherry-pick commitsSha
 ```
 
 
+- config to use ssh key for a specific repository
+```
+$ git remote -v
+origin	https://github.com/isinaltinkaya/REPO.git (fetch)
+origin	https://github.com/isinaltinkaya/REPO.git (push)
+#change it to git
+$ git remote set-url origin git@github.com:isinaltinkaya/REPO.git
+```
 - Nice tutorials
 [gittutorial](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/gittutorial.html)
 [Git for Computer Scientists](https://eagain.net/articles/git-for-computer-scientists/)
