@@ -29,10 +29,12 @@ test1.csv test2.csv
 *csv
 ```
 
-$* ->not safe
-$@ ->not safe
-"$@" ->safe
-[details](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
+## [Safety of special parameters](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
+`$*` not safe
+`$@` not safe
+`"$@"` ->safe
+
+
 
 [Use ShellCheck!!](https://www.shellcheck.net/)
 
