@@ -1,19 +1,32 @@
-`set -e`
+
+- `set -e`
+
 If a command fails, make the script exit; not continue with the next line.
 If it is ok for one foo command to fail, use `false || foo`
 
-`set -u`
+- `set -u`
+
 If unset variable exists; exit
 
-`set -f`
+- `set -f`
+
 Disable globbing
 
-`shopt -s failglob`
+- `shopt -s failglob`
+
 Use globbing but if a globbing fails give error
 [details](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
 
-`set -o pipefail`
+- `set -o pipefail`
+
 Fail pipeline if any command exits with error
+
+
+- `set -a` or `set -o allexport`
+
+allexport using single letter syntax; export all variables set, useful to pass variables to parallel (credit: @tuncenator)
+
+
 
 ```
 set -euo pipefail
@@ -28,6 +41,7 @@ test1.csv test2.csv
 -> echo "$var"
 *csv
 ```
+
 
 ## [Safety of special parameters](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
 `$*` not safe
