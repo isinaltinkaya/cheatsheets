@@ -1,4 +1,4 @@
-## forgot to start the job in tmux or screen? no problem; do this:
+- ###  forgot to start the job in tmux or screen? no problem; do this:
 ```
 0- put in bg (skip if you already used &)
 1- get pid from jobs -l (or jobs -p if you happened to be running only one job at the same time)
