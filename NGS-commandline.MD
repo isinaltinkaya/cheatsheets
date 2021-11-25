@@ -19,3 +19,8 @@ samtools reheader -c 'perl -pe "s/^(@SQ.*)(\tSN:)(\d+|X|Y|MT)(\s|\$)/\$1chr\$2\$
 ```
 samtools addreplacerg -r "ID:XXXX" -o OUT.bam IN.bam
 ```
+
+### - remove comment lines
+```
+samtools reheader -c 'grep -v ^@CO' in.bam
+```
