@@ -14,3 +14,8 @@ samtools reheader -c 'perl -pe "s/^(@SQ.*)(\tSN:)Chr/\$1\$2/"' in.bam
 ```
 samtools reheader -c 'perl -pe "s/^(@SQ.*)(\tSN:)(\d+|X|Y|MT)(\s|\$)/\$1chr\$2\$3/"' in.bam
 ```
+
+### - replace RG
+```
+samtools addreplacerg -r "ID:XXXX" -o OUT.bam IN.bam
+```
