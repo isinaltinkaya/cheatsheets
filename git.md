@@ -46,6 +46,38 @@ origin	https://github.com/isinaltinkaya/REPO.git (push)
 #change it to git
 $ git remote set-url origin git@github.com:isinaltinkaya/REPO.git
 ```
-- Nice tutorials
-[gittutorial](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/gittutorial.html)
-[Git for Computer Scientists](https://eagain.net/articles/git-for-computer-scientists/)
+
+- use soft links to sync your code in github repository directory with the working directory
+```
+ln -s /my/github/repo/dir/code.sh /my/working/dir/code.sh 
+```
+
+bonus: you can use my bashrc script as well
+
+add this to your `.bashrc`:
+```
+lns(){
+    SRC=$(realpath ${1})
+    CDIR=$(pwd)
+    FNAME=$(basename ${1})
+    ln -vs ${SRC} ${CDIR}/${FNAME}
+}
+```
+then
+```
+> cd my_working_dir
+> lns ../../my_git_repo_dir/script
+```
+Will generate this soft link:
+```
+"/full/path/to/my_git_repo_dir/script" -> "/full/path/to/my_working_dir/script"
+```
+
+
+
+---
+
+## Nice tutorials
+- [gittutorial](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/gittutorial.html)
+
+- [Git for Computer Scientists](https://eagain.net/articles/git-for-computer-scientists/)
