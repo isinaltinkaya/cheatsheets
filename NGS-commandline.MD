@@ -24,3 +24,9 @@ samtools addreplacerg -r "ID:XXXX" -o OUT.bam IN.bam
 ```
 samtools reheader -c 'grep -v ^@CO' in.bam
 ```
+
+
+### - split a vcf file to samples
+```
+bcftools +split -S <(bcftools query -l ${VCF_FILE}) ${VCF_FILE} -o ${OUTPUT_DIR}
+```
