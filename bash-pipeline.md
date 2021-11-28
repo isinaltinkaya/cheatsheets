@@ -26,11 +26,18 @@ Fail pipeline if any command exits with error
 
 allexport using single letter syntax; export all variables set, useful to pass variables to parallel (credit: @tuncenator)
 
-
-
 ```
 set -euo pipefail
 shopt -s failglob
+```
+
+
+- loop bash array using indices, useful when you also need to know the index e.g. filtering out some of them based on index
+```
+allFiles=(path/*.txt)
+for i in ${!allFiles[@]}; do
+  ./run --param ${allThreads[$i]}
+done
 ```
 
 Use "$var" instead of $var.
