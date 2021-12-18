@@ -113,13 +113,15 @@ with old version of git (v1.6.5 to v2.13)
 git clone --recursive 
 ```
 
-### - using phony target
 
-`.PHONY: something`
+### - use a specific version with submodule
 
-declare phony targets; make will not check them as actual filenames. it will even if such files exist.
-
----
+```
+cd submodule
+git checkout v1
+cd ..
+git add . ; git commit -m "Changed submodule version to v1"; git push
+```
 
 ## Nice tutorials
 - [gittutorial](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/gittutorial.html)
