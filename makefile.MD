@@ -23,3 +23,13 @@ evaluate every time x is encountered in the code
 assign a value to x only if it does not have a value
 
 ## - Appending `+=`
+
+
+
+### - using phony target
+
+`.PHONY: something`
+
+declare phony targets; make will not check them as actual filenames. it will even if such files exist.
+
+---
