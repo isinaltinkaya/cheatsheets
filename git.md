@@ -113,6 +113,12 @@ with old version of git (v1.6.5 to v2.13)
 git clone --recursive 
 ```
 
+### - using phony target
+
+`.PHONY: something`
+
+declare phony targets; make will not check them as actual filenames. it will even if such files exist.
+
 ---
 
 ## Nice tutorials
