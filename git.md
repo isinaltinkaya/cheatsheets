@@ -96,6 +96,23 @@ git submodule init
 git submodule update
 ```
 
+if submodule contains another submodule:
+(with git v2.13 and later)
+
+```
+git clone --recurse-submodules ${URL}
+```
+
+if already cloned but missing a submodule of the submodule
+```
+git submodule update --init --recursive
+```
+
+with old version of git (v1.6.5 to v2.13)
+```
+git clone --recursive 
+```
+
 ---
 
 ## Nice tutorials
