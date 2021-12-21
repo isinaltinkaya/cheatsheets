@@ -1,10 +1,29 @@
 ####
 
-### - sort bed file by first chr then coordinate
+### - sort bed file
+
+If you have a chr prefix, e.g.
 ```
-sort -k1,1 -k2,2n $BED_FILE >${BED_FILE}_sorted.bed
+chr1 10 20
+chr2 10 20
 ```
 
+use the following command for sorting:
+```
+sort -V ${file}
+```
+
+If you do not have a chr prefix, e.g.
+
+```
+1 10 20
+2 10 20
+```
+
+use the following command for sorting:
+```
+sort -n -k1 -k2 ${file}
+```
 ### - remove "Chr" prefix
 ```
 samtools reheader -c 'perl -pe "s/^(@SQ.*)(\tSN:)Chr/\$1\$2/"' in.bam
