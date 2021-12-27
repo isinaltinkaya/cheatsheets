@@ -123,6 +123,46 @@ cd ..
 git add . ; git commit -m "Changed submodule version to v1"; git push
 ```
 
+
+### - Add commit message template
+
+git config --global commit.template ~/.gitmessage
+
+
+Inside `.gitmessage`:
+```
+# [type](optional scope): Title
+#################################################
+# Title length: 50 chars - - - - - - - - - - -> #
+#################################################
+
+#
+# Empty line between title and body
+#
+
+#
+# Body: Explain *what* and *why* (not *how*) 
+# Body length: Wrap at 72 chars  - - - - - - - - - - - - - - - - - -> #
+
+#
+#
+# [type]:
+# -------
+# [feat] - A new feature
+# [fix] - A bug fix
+# [perf] - A code change that improves performance
+# [test] - Add test
+# [build] - Build related changes
+# [chore] - Build process or auxiliary tool changes
+# [doc] - Documentation-related changes
+# [style] - Markup, formatting, typos etc
+#
+# Adapted from https://dev.to/helderburato/patterns-for-writing-better-git-commit-messages-4ba0
+#
+```
+
+
+
 ## Nice tutorials
 - [gittutorial](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/gittutorial.html)
 
