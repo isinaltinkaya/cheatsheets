@@ -58,3 +58,15 @@ perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' hla_gen.fasta > hla_gen_linear.f
 #find the type (ID) and get the type +its next line for each match
 while IFS=, read -r id type;do grep -F -A1 --no-group-separator $type hla_gen_linear.fasta > ${id}.fasta ;done < HG00733_MHC_types.csv 
 ```
+
+### - blast
+
+create blast database
+```
+ncbi-blast-2.12.0+/bin/makeblastdb -in ${i} -title ${i%.fasta} -dbtype nucl -parse_seqids
+```
+
+blast query to database
+```
+ncbi-blast-2.12.0+/bin/blastn -num_threads 4 -query QUERY.fa -db DATABASE 
+```
