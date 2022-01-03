@@ -49,3 +49,12 @@ samtools reheader -c 'grep -v ^@CO' in.bam
 ```
 bcftools +split -S <(bcftools query -l ${VCF_FILE}) ${VCF_FILE} -o ${OUTPUT_DIR}
 ```
+
+### - linearize fasta file then fetch sequences by id
+```
+#linearize the fasta file 
+perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' hla_gen.fasta > hla_gen_linear.fasta
+
+#find the type (ID) and get the type +its next line for each match
+while IFS=, read -r id type;do grep -F -A1 --no-group-separator $type hla_gen_linear.fasta > ${id}.fasta ;done < HG00733_MHC_types.csv 
+```
