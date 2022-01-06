@@ -12,6 +12,20 @@ ___
 
 ___
 
+### -> check if variable is set
+
+If you want `var=''` to be evaluated as var is set;
+```
+if [ -z ${var} ]
+```
+
+If you want `var=''` to be evaluated as var is unset;
+
+```
+if [ -z ${var+x} ] 
+```
+___
+
 | expression | `FOO='V'`    | `FOO=''`     | `unset FOO`  |
 |------------|------------|------------|------------|
 | `${FOO:-x}`  | V          | x          | x          |
