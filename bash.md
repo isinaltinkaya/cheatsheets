@@ -16,14 +16,16 @@ ___
 
 If you want `var=''` to be evaluated as var is set;
 ```
-if [ -z ${var} ]
+if [ -z ${var} ]; then echo "var is unset"; else echo "var is set to '$var'";fi
 ```
 
 If you want `var=''` to be evaluated as var is unset;
+```
+if [ -z ${var+x} ]; then echo "var is unset"; else echo "var is set to '$var'";fi
+```
 
-```
-if [ -z ${var+x} ] 
-```
+[credit](https://stackoverflow.com/a/13864829/7870777)
+
 ___
 
 | expression | `FOO='V'`    | `FOO=''`     | `unset FOO`  |
