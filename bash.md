@@ -28,6 +28,58 @@ if [ -z ${var+x} ]; then echo "var is unset"; else echo "var is set to '$var'";f
 
 ___
 
+
+### -> prefer `mapfile` `read-a` or quotes
+[credit: mostly copy paste](https://github.com/koalaman/shellcheck/wiki/SC2207)
+
+
+Unquoted command expansion in an array invokes the shell's sloppy word splitting and glob expansion:
+```
+##BAD
+array=( $(mycommand) ) 
+```
+Instead, prefer explicitly splitting (or not splitting).
+
+If you want to split the output into lines or words, use `mapfile`, `read -ra` and/or `while loops`.
+```
+# For bash 4.x, must not be in posix mode, may use temporary files
+mapfile -t array < <(mycommand)
+
+# For bash 3.x+, must not be in posix mode, may use temporary files
+array=()
+while IFS='' read -r line; do array+=("$line"); done < <(mycommand)
+
+# For ksh, and bash 4.2+ with the lastpipe option enabled (may require disabling monitor mode)
+array=()
+mycommand | while IFS="" read -r line; do array+=("$line"); done
+```
+
+
+If it outputs a line with multiple words (separated by spaces), other delimiters can be chosen with IFS, each of which should be an element:
+
+```
+# For bash, uses temporary files
+IFS=" " read -r -a array <<< "$(mycommand)"
+
+# For bash 4.2+ with the lastpipe option enabled (may require disabling monitor mode)
+array=()
+mycommand | IFS=" " read -r -a array
+
+# For ksh
+IFS=" " read -r -A array <<< "$(mycommand)"
+```
+
+
+If the output should become a single array element, quote it:
+```
+array=( "$(mycommand)" )
+```
+
+This prevents the shell from doing unwanted splitting and glob expansion, and therefore avoiding problems with output containing spaces or special characters.
+
+
+___
+
 | expression | `FOO='V'`    | `FOO=''`     | `unset FOO`  |
 |------------|------------|------------|------------|
 | `${FOO:-x}`  | V          | x          | x          |
