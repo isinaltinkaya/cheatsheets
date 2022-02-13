@@ -22,6 +22,24 @@ intToRef | <maps_to>
 
 
 
+___
+### - tNode
+
+```
+typedef struct{
+  int refId;
+  int regStart;
+  int regStop;
+  int nSites;
+  int nSamples;
+  tNode ***nd;//nd[site][ind]
+  int *refPos;//length is nSites
+}chunkyT;
+```
+
+```
+chunkyT *chk = pars->chk;
+```
 
 ```
 typedef struct  tNode_t{//order is important. First 8 bytes will be modified by pool_alloc structure (James Bonfield)
@@ -42,8 +60,6 @@ typedef struct  tNode_t{//order is important. First 8 bytes will be modified by 
 ```
 
 ```
-chunkyT *chk = pars->chk;
-
 // s = site_i [int s=0;s<pars->numSites;s++]
 // i = ind_i [int i=0;i<pars->nInd;i++]
 tNode *nd = chk->nd[s][i]
@@ -56,18 +72,8 @@ nd->l [int]
 ```
 
 
-
-```
-typedef struct{
-  int refId;
-  int regStart;
-  int regStop;
-  int nSites;
-  int nSamples;
-  tNode ***nd;//nd[site][ind]
-  int *refPos;//length is nSites
-}chunkyT;
-```
+___
+### - funkyPars
 
 
 ```
