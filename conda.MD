@@ -15,3 +15,8 @@ conda config --set auto_activate_base false
 ```
 conda env export --from-history >> env.yml
 ```
+
+### create at a specific loc
+```
+conda env create --prefix ./envs
+```
