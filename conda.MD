@@ -18,5 +18,5 @@ conda env export --from-history >> env.yml
 
 ### create at a specific loc
 ```
-conda env create --prefix ./envs
+conda create --prefix ./envs
 ```
