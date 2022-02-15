@@ -1,5 +1,17 @@
 # git cheatsheet
 
+
+### - Update branch `develop`  (origin/master->develop)
+
+```
+git checkout develop
+git fetch origin
+git merge origin/master
+```
+
+
+
+
 ### - add remote upstream (use when you fork a project to catch up with its latest updates)
 
 ```
