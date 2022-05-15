@@ -65,3 +65,20 @@ CPPFLAGS are for the C [P]re[P]rocessor
 
 
 https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
+
+
+___
+
+### Automatic variables `$@` and `$<`
+`$@` name of the target 
+`$<` the first prerequisite required to create the output file
+
+For example: (Source: https://stackoverflow.com/a/18548815/7870777) 
+```
+hello.o: hello.c hello.h
+         gcc -c $< -o $@
+```
+
+`$@` expands to `hello.o` 
+
+`$<` expands to the first dependency= `hello.c`
