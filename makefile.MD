@@ -33,3 +33,29 @@ assign a value to x only if it does not have a value
 declare phony targets; make will not check them as actual filenames. it will even if such files exist.
 
 ---
+
+
+### 
+
+### - `CC`
+Program for compiling C programs; default `cc`.
+
+### - `CXX`
+Program for compiling C++ programs; default `g++`.
+
+### - `CPP`
+Program for running the C preprocessor, with results to standard output; default `$(CC) -E`.
+
+
+### - `CFLAGS` =  Flags to give to C compiler.
+CFLAGS is only passed when compiling and linking C.
+
+### - `CXXFLAGS` = Flags to give to the C++ compiler.
+CXXFLAGS is only passed when compiling and linking C++.
+
+### - `CPPFLAGS` = Flags to give to the C preprocessor
+and programs that use it (the C and Fortran compilers).
+CPPFLAGS are for the C [P]re[P]rocessor
+
+
+https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
