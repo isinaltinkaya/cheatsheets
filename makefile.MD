@@ -56,6 +56,12 @@ CXXFLAGS is only passed when compiling and linking C++.
 ### - `CPPFLAGS` = Flags to give to the C preprocessor
 and programs that use it (the C and Fortran compilers).
 CPPFLAGS are for the C [P]re[P]rocessor
+=where should we look for files to include
+
+
+### - `LDFLAGS` = What libraries should be linked with
+=where should we look for libraries to link with
+
 
 
 https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
