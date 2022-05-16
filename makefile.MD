@@ -82,3 +82,13 @@ hello.o: hello.c hello.h
 `$@` expands to `hello.o` 
 
 `$<` expands to the first dependency= `hello.c`
+
+
+
+____
+
+How to use c++14 in redhat servers where the regular gcc is lower version:
+
+```
+scl enable devtoolset-* make
+```
