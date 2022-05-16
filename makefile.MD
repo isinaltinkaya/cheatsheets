@@ -87,7 +87,7 @@ hello.o: hello.c hello.h
 
 ____
 
-How to use c++14 in redhat servers where the regular gcc is lower version:
+- How to use c++14 in redhat servers where the regular gcc is lower version:
 
 ```
 scl enable devtoolset-* make
