@@ -95,6 +95,11 @@ Will generate this soft link:
 
 
 ### - Using submodules
+
+```
+git submodule add https://github.com/samtools/htslib.git
+```
+
 clone  repo with submodules:
 
 ```
