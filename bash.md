@@ -194,3 +194,16 @@ You get this:
 $ echo $(cat sim2/model_OutOfAfrica_3G09/contig_chr22/sfs/sim2-OutOfAfrica_3G09-chr22-rep3-d2_indpair_pop2_ind45-pop3_ind25.sfs)| tr ' ' ','                                                                    
 130401.839417,5204.746850,860.006540,7636.679624,2810.368398,4270.813548,819.873691,1719.716788,4978.955144
 ```
+
+---
+
+
+
+```  
+$ cat file.txt
+a
+b
+c
+$ paste -s -d ',' file.txt 
+a,b,c
+```
