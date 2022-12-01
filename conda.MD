@@ -16,6 +16,8 @@ conda config --set safety_checks disabled
 conda config --set channel_priority strict
 ```
 
+- Use mamba
+
 See https://www.anaconda.com/blog/understanding-and-improving-condas-performance
 
 ## - install conda
