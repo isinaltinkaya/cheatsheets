@@ -1,7 +1,25 @@
-#### Conda env using miniconda
-See https://docs.conda.io/en/latest/miniconda.html
+## - conda speedup
+
+- Disable safety checks
+```
+conda config --set safety_checks disabled
+```
+
+- Be more specific with versions
+`numpy` -> `numpy=1.15` or even better `numpy=1.15.4`
+
+- Specify particular R implementations
+`r-essentials` -> `r-base=3.5 r-essentials`
+
+- Eliminate possible mixed solutions:
+```
+conda config --set channel_priority strict
+```
+
+See https://www.anaconda.com/blog/understanding-and-improving-condas-performance
 
 ## - install conda
+Conda env using miniconda, see https://docs.conda.io/en/latest/miniconda.html
 
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -31,3 +49,5 @@ conda env export --from-history >> env.yml
 ```
 conda create --prefix ./envs
 ```
+
+
