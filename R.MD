@@ -53,7 +53,7 @@ localhost:13.0 # returns localhost:xx.0
 
 In the original R terminal, set the `DISPLAY` parameter to the new connection value:
 
-```
+```R
 # old terminal
 > Sys.setenv('DISPLAY' = 'localhost:13.0')
 > x11('localhost:13.0')  # or x11() - both should work
