@@ -78,8 +78,14 @@ ncbi-blast-2.12.0+/bin/blastn -num_threads 4 -query QUERY.fa -db DATABASE
 # Repeat the character 'A' N times and write to a file efficiently using "dd"
 dd if=/dev/zero bs=1 count=${N}  | tr '\0' 'A' >  ${OUTPUT_FILE}
 # Add a new line at the end of the file, if it is not already there
-sed -i -e '$a\' ${OUTPUT_FILE}' 
-
+sed -i -e '$a\' ${OUTPUT_FILE} 
 # Append '>CONTIG1' to the beginning of the file
 sed -i -e '1s/^/>CONTIG1\n/' ${OUTPUT_FILE}
+```
+
+
+### - Create ANGSD sites file (chr pos major minor) from BCF using REF and first ALT 
+
+```bash
+bcftools query -f '%CHROM\t%POS\t%REF\t%ALT{0}\n' ${BCF} > sites.txt
 ```
