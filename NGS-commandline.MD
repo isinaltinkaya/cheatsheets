@@ -89,3 +89,11 @@ sed -i -e '1s/^/>CONTIG1\n/' ${OUTPUT_FILE}
 ```bash
 bcftools query -f '%CHROM\t%POS\t%REF\t%ALT{0}\n' ${BCF} > sites.txt
 ```
+
+
+
+### - Create a sites file for N sites with given REF and ALT
+
+```bash
+awk -v X=${contig} -v XN=${contig_length} 'BEGIN{for(c=1;c<XN;c++) printf "X\t%d\tA\tC\n",c}' > ${output}
+```
