@@ -34,12 +34,11 @@ conda config --set auto_activate_base false
 ```
 
 
-## - export the codna environment for later use
+## - export the conda environment for later use
 
 ```
 conda env export >> env.yml
 ```
-
 
 For cross platform compatibility, use `--from-history` flag to only include packages that were explicitly installed instead of including every package in environment.
 
