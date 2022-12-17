@@ -95,5 +95,13 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT{0}\n' ${BCF} > sites.txt
 ### - Create a sites file for N sites with given REF and ALT
 
 ```bash
-awk -v X=${contig} -v XN=${contig_length} 'BEGIN{for(c=1;c<XN;c++) printf "X\t%d\tA\tC\n",c}' > ${output}
+awk -v X=${contig} -v XN=${contig_length} 'BEGIN{for(c=1;c<XN;c++) printf "%s\t%d\tA\tC\n",X,c}' > ${output}
+```
+
+```python
+# for snakemake
+shell:
+    """
+    awk -v X={wildcards.contig} -v XN={params.contig_length} 'BEGIN{{for(c=1;c<XN;c++) printf "%s\\t%d\\tA\\tC\\n",X,c}}' > {output}
+    """
 ```

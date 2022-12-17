@@ -76,3 +76,52 @@ ForwardX11Timeout 1d
 [Source](https://stackoverflow.com/a/67487865/7870777)
 
 ___
+
+
+# Good-to-have functions for your `.Rprofile`
+
+```R
+
+# check directory name string if the directory exists
+# and make sure there is a / at the end
+asDirPath <- function(string){
+  if(!endsWith(string,"/"))string=paste0(string,"/")
+  if(!dir.exists(string))warning("Directory does not exist, will exit!")
+  return(string)
+}
+
+
+# clear everything in the env
+# then call garbage collector
+clear <- function(){
+  rm(list=ls())  
+  gc()
+}
+
+###############################################################################
+# from source1
+print.command <- function (cmd) {
+  default.args <- attr(cmd, "default.args")
+  if (length(default.args) == 0L) default.args <- list()
+  res <- do.call(cmd, default.args, envir = parent.frame(2))
+  if (attr(cmd, "print_result")) print(res)
+  invisible(NULL)
+}
+
+make_command <- function(x, ..., print = TRUE) {
+  class(x) <- c("command", class(x))
+  attr(x, "default.args") <- list(...)
+  attr(x, "print_result") <- print
+  x
+}
+
+exit <- make_command(quit, print = FALSE)
+###############################################################################
+```
+
+[Source1](https://stackoverflow.com/a/74543954/7870777)
+
+___
+
+
+TODO add https://raw.githubusercontent.com/isinaltinkaya/R_collection/main/functions.MD
