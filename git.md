@@ -20,7 +20,8 @@ Removing multiple commits from the top
 Remove the last two commits:
 
 ```
-git reset --hard HEAD~2 
+git reset --hard HEAD~2
+git push origin -f
 ```
 
 `~2` : up two levels in the hierarchy
