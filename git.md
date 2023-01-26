@@ -1,26 +1,38 @@
 # git cheatsheet
 
-
 ___
-## Emergency - Messed things up:
-### - Go back in time: Remove a specific commit from history
-Removing the last commit
+___
 
-Remove the last commit from git
+# Emergency 
+
+## - Go back in time: Remove a specific commit from history
+
+### Remove the last commit from git history
+
 ```
 git reset --hard HEAD^
 ```
 
 Removing multiple commits from the top
 
-Remove the last two commits
+### Remove the last N commits
+
+Remove the last two commits:
 
 ```
 git reset --hard HEAD~2 
 ```
 
+`~2` : up two levels in the hierarchy
+if a commit has more than one parent, use the first parent 
+
+`^2` : the second parent where a commit has more than one parent (i.e. because it's a merge)
+
+`HEAD~2^3` : HEAD's grandparent commit's third parent commit
 
 ___
+___
+
 
 
 
