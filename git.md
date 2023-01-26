@@ -1,6 +1,29 @@
 # git cheatsheet
 
 
+___
+## Emergency - Messed things up:
+### - Go back in time: Remove a specific commit from history
+Removing the last commit
+
+Remove the last commit from git
+```
+git reset --hard HEAD^
+```
+
+Removing multiple commits from the top
+
+Remove the last two commits
+
+```
+git reset --hard HEAD~2 
+```
+
+
+___
+
+
+
 ### - Update branch `develop`  (origin/master->develop)
 
 ```
