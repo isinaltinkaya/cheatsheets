@@ -17,3 +17,11 @@ https://stackoverflow.com/a/66872577/7870777
 | `io_out`    |    float (MB)   | the number of MB written (cumulative).                                                                                                                                              |
 | `mean_load` |    float (-)    | CPU usage over time, divided by the total running time (first row)                                                                                                                  |
 | `cpu_time`  |     float(-)    | CPU time summed for user and system                                                                                                                                                 |
+
+
+
+
+
+## Delete all the outputs up to a certain rule if specified, otherwise only output of first rule by default
+
+snakemake --delete-all-output <rule name>	
