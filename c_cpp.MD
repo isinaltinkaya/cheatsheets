@@ -24,3 +24,9 @@ This can also be generalized to such header pairs.
 Credit:https://stackoverflow.com/a/10694346/7870777
 
 ___
+
+
+
+## Safe bitsetting functions
+
+https://github.com/campellcl/YESS-Y86/blob/master/Tools.C
