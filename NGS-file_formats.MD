@@ -1,4 +1,16 @@
-## PAF: a Pairwise mApping Format ([Source](https://github.com/lh3/miniasm/blob/master/PAF.md))
+## - Coordinate systems
+
+
+https://www.biostars.org/p/84686/
+https://genome-blog.soe.ucsc.edu/blog/2016/12/12/the-ucsc-genome-browser-coordinate-counting-systems/
+
+
+
+
+
+
+
+## - PAF: a Pairwise mApping Format ([Source](https://github.com/lh3/miniasm/blob/master/PAF.md))
 
 Approximate mapping positions between two set of sequences.
 TSV
