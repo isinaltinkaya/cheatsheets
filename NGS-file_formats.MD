@@ -41,3 +41,15 @@ If PAF is generated from an alignment:
 
 - A PAF file may optionally contain SAM-like typed key-value pairs at the end of
 each line.
+
+
+
+
+
+
+# VCF/BCF files
+
+## INFO vs FORMAT fields
+
+- INFO is for describing the variation. Appears in the INFO field. `<key>=<data>[,data]`.
+- FORMAT is for describing the samples. Values appear under individual names and multiple fields for each sample are separated by semicolons.
