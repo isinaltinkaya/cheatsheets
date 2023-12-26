@@ -177,10 +177,21 @@ git add . ; git commit -m "Changed submodule version to v1"; git push
 ```
 
 
+### - Added a large file by mistake, remote rejects my push
+
+
+```
+git rm --cached MY_LARGE_FILES*
+git commit --amend -C HEAD
+git push
+```
+
+
 ### - Add commit message template
 
+```
 git config --global commit.template ~/.gitmessage
-
+```
 
 Inside `.gitmessage`:
 ```
