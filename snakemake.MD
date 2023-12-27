@@ -1,5 +1,32 @@
 # snakemake
 
+## Filling up the tmpdir
+
+If you force-cancel a complex job you might fill up the tmpdir quite fast. To avoid this specify a tmpdir location in your bashrc
+
+
+```
+# ~/.bashrc
+export TMPDIR='/path/to/mytmpdir'
+```
+
+Or also in smk file to make sure a conda env or something like that did not overwrite your TMPDIR env variable
+
+```
+# ~/.bashrc
+export MYTMPDIR='path/to/mytmpdir'
+```
+
+
+```
+# Snakefile
+import os
+os.environ['TMPDIR'] = os.environ['MYTMPDIR']
+```
+
+
+## etc
+
 
 https://github.com/snakemake/snakemake/blob/f55801bfabfb916f77fa4ec8f9eb0667e5c8a92e/snakemake/benchmark.py
 
