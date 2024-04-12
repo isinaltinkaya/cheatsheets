@@ -45,7 +45,7 @@ wget -O- $url | shasum -a 256  > shasum256.txt
 ```
 
 
-## 3- 
+## 3- Test locally
 
 ```
 conda create -n bioconda -c conda-forge -c bioconda bioconda-utils
@@ -55,6 +55,11 @@ conda activate bioconda
 
 ```
 cd bioconda-recipes
-bioconda-utils build --packages vcfgl --force --logfile vcfgl_build.log
+bioconda-utils build  --packages vcfgl  --force --logfile ../vcfgl_build.log
 ```
+
+
+
+
+
 
