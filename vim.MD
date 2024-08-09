@@ -1,3 +1,12 @@
+### paste icon unicode
+
+```
+> go to insert mode
+> ctrl+v
+> enter letter 'u'
+> write the unicode of the icon (e.g. f0133)
+```
+
 
 ### reuse match
 
